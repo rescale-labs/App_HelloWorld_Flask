@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rescale App</title>
+</head>
+
+<body>
+    <h1 id="top_title"></h1>
+    <pre id="top"></pre>
+
+    <script>
+        const apiUrl = '{{ base_url }}/api/top';
+
+        function getRandomInteger(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        async function fetchDataAndUpdateDiv() {
+            count = getRandomInteger(1, 10);
+            try {
+                const response = await fetch(`${apiUrl}?count=${encodeURIComponent(count)}`);
+                const data = await response.json();
+
+                const topTitleElement = document.getElementById('top_title');
+                topTitleElement.innerText = "top " + data.top.length;
+
+                const topElement = document.getElementById('top');
+                topElement.innerText = JSON.stringify(data, undefined, 4);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        fetchDataAndUpdateDiv()
+        setInterval(fetchDataAndUpdateDiv, 2000);
+    </script>
+</body>
+
+</html>

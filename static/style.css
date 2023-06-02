@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10pt;
+}
+
+pre {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12pt;
+}
+
+.row {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    margin: 10px;
+}
+
+.rescalebg {
+    background-blend-mode: color;
+    background: darkblue;
+    color: white;
+    padding-left: 20pt;
+    background-size: 10%;
+    background-repeat: space;
+}
+
+.break {
+    word-break: break-all;
+}
+
+#headers {
+    border-collapse: collapse;
+}
+
+#headers td,
+#headers th {
+    border: 1px solid #ddd;
+}
+
+#headers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#headers tr:hover {
+    background-color: #ddd;
+}
+
+#headers th {
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}

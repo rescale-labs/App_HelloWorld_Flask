@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rescale App</title>
+</head>
+
+<body>
+    <form method="POST">
+        <label>Number of processes with highest CPU utilization</label>
+        <input type="text" name="count">
+        <input type="submit" value="Show">
+    </form>
+    <h1>top {{ count }}</h1>
+    <pre>{{ top }}</pre>
+</body>
+
+</html>
