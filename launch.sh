@@ -31,9 +31,7 @@ rm ~/miniconda.sh
 conda create -y --name RESCALE python=$PYTHON_VERSION
 conda activate RESCALE
 pip install --upgrade pip
-
 pip install -r requirements.txt
 
 ## Start the web server
-export PYMAPDL_MAPDL_EXEC=$(find /program/ -type f -name mapdl | head -1)
 gunicorn -t 0 --certfile $HOME/.certs/nb.pem --keyfile $HOME/.certs/nb.key -b 0.0.0.0:8888 wsgi:app
