@@ -61,8 +61,6 @@ The page displayed in the browser should look like this.
 
 ![](README.images/helloworld_rescale_page.png)
 
-https://eu.rescale.com/notebooks/bvxEMb
-
 ### Publishing a Rescale App using Rescale Software Publisher
 
 > TODO: Stay tuned...
@@ -73,7 +71,7 @@ The current integration of Rescale Apps with the platform relies on an existing 
 
 The `jupyter4all` flag does two things that are leveraged by Rescale Apps. First, it injects a certificate and a key file that are used to establish a secure connection between the Rescale ScaleX platform and a web server running on a cluster. Second, it establishes a proxy that forwards HTTP requests issued to a public web address so these reach a cluster with a specific `cluster_id`.
 
-![](README.images/app_tunel.png)
+![](README.images/app_proxy.png)
 
 The [launch.sh](launch.sh) script does all the magic. First, it kills the Jupyter Notebook server and then starts a web server which wraps our application and uses certificate and key to establish secure connections with the ScaleX Platform. The launch script also upgrades the Python installation.
 
