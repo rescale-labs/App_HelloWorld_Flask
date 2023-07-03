@@ -1,0 +1,27 @@
+#!/bin/bash
+
+. ~/jupyter-venv/bin/activate
+RESCALE_PYTHON_TOKEN=$(jupyter notebook list | grep token | sed --regexp-extended 's/.*token=([a-z0-9]*).*/\1/g')
+MATCH="jupyter"
+
+function killall() {
+  proc_arry=($(ps -ef | grep $1 | awk '{print $2}'))
+
+  for i in "${proc_arry[@]}"; do
+    kill -9 $i
+  done
+}
+
+killall $MATCH
+deactivate
+
+MOUNT_POINT="%MOUNT_POINT%"
+VERSION="%VERSION%"
+
+INSTALL_DIR=$MOUNT_POINT/$VERSION
+
+eval "$(/${INSTALL_DIR}/miniconda/bin/conda shell.bash hook)"
+conda activate RESCALE
+
+cd $INSTALL_DIR
+gunicorn -t 0 --certfile $HOME/.certs/nb.pem --keyfile $HOME/.certs/nb.key -b 0.0.0.0:8888 wsgi:app
