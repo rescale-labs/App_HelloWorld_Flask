@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Rescale App</title>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10pt;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100;300&display=swap">
 </head>
 
-<body>
+<body style="font-family: 'Roboto Mono', monospace; font-size: 10pt;">
     <h1 id="top_title"></h1>
-    <pre id="top"></pre>
+    <h2 id="top_proc"></h2>
+    <div id="top_pre" style="white-space: pre;"></div>
 
     <script>
         const apiUrl = '{{ base_url }}/api/top';
@@ -27,8 +36,12 @@
 
                 const topTitleElement = document.getElementById('top_title');
                 topTitleElement.innerText = "top " + data.top.length;
+                console.log("Fetched " + data.top.length + " items.")
 
-                const topElement = document.getElementById('top');
+                const topProcElement = document.getElementById('top_proc');
+                topProcElement.innerText = "Process: " + data.top[0].proc + "; Memory %: " + data.top[0].mem;
+
+                const topElement = document.getElementById('top_pre');
                 topElement.innerText = JSON.stringify(data, undefined, 4);
             } catch (error) {
                 console.error('Error:', error);

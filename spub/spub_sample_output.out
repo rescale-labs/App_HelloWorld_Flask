@@ -1,0 +1,192 @@
+❯ source build.sh
+updating: dist/ (stored 0%)
+updating: dist/requirements.txt (stored 0%)
+updating: dist/static/ (stored 0%)
+updating: dist/static/hello.html (deflated 31%)
+updating: dist/static/rescale_logo.svg (deflated 58%)
+updating: dist/static/style.css (deflated 55%)
+updating: dist/app.py (deflated 58%)
+updating: dist/templates/ (stored 0%)
+updating: dist/templates/form.html (deflated 37%)
+updating: dist/templates/index.html (deflated 55%)
+updating: dist/templates/style.html (deflated 62%)
+updating: dist/templates/script.html (deflated 55%)
+updating: dist/spub_launch.sh (deflated 32%)
+updating: dist/wsgi.py (deflated 5%)
+2023-07-04 10:57:26,037 - Authenticated as bdobrzelecki@rescale.com
+2023-07-04 10:57:26,058 - Sandbox: Syncing software
+2023-07-04 10:57:26,705 - updated dev analysis pJDtgb
+2023-07-04 10:57:27,176 - updated dev analysis version jVDsa
+2023-07-04 10:57:27,176 - created dev analysis version jVDsa env
+2023-07-04 10:57:27,192 - Uploading Files
+2023-07-04 10:57:27,196 - Uploading: dist.zip
+2023-07-04 10:57:30,360 - Uploading: /var/folders/rf/xm3_hk9n6d9cmv_s1vwrmd880000gn/T/rescale-cli-work11104839466099910751/settings.json
+2023-07-04 10:57:30,742 - Uploading: spub_build.sh
+Please choose from the following configuration options:
+0. No MPI
+1. No MPI
+
+2023-07-04 10:57:31,760 - Sandbox: Saving Sandbox
+2023-07-04 10:57:34,267 - Sandbox eGHtSc: Saved
+2023-07-04 10:57:37,230 - Sandbox eGHtSc: Waiting for status INSTALLATION_COMPLETE
+2023-07-04 10:58:37,437 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 10:59:37,676 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:00:38,466 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:01:38,724 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:02:38,936 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:03:39,192 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:04:39,401 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:05:39,656 - Sandbox eGHtSc: Status - SANDBOX_STARTING
+2023-07-04 11:06:39,865 - Sandbox eGHtSc: Status - INSTALLATION_COMPLETE
+2023-07-04 11:06:39,865 - Sandbox creation completed.
+
+Please perform any manual installation steps on the sandbox before running `spub tile publish --sandboxId eGHtSc` to publish the software.
+
+Sandbox connection info can be retrieved with `spub sandbox connect --sandbox-id eGHtSc`.
+Sandbox connection info can be retrieved with `spub sandbox connect --sandbox-id eGHtSc`.
+ssh -p 22 udeprod_eGHtSc@ec2-3-68-190-68.eu-central-1.compute.amazonaws.com
+Warning: Permanently added 'ec2-3-68-190-68.eu-central-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+PREFIX=/program/com_rescale_app_helloworld_flask/2023.07.04-dev/miniconda
+Unpacking payload ...
+Extracting : ca-certificates-2023.01.10-h06a4308_0.conda:  37%|███▋      | 18/49 [00:00<00:07,  4.05it/Extracting : boltons-23.0.0-py310h06a4308_0.conda:  39%|███▉      | 19/49 [00:00<00:07,  4.05it/s]     Extracting : conda-package-streaming-0.7.0-py310h06a4308_0.conda:  43%|████▎     | 21/49 [00:00<00:06, Extracting : requests-2.28.1-py310h06a4308_1.conda:  45%|████▍     | 22/49 [00:00<00:06,  4.05it/s]    Extracting : ruamel.yaml.clib-0.2.6-py310h5eee18b_1.conda:  47%|████▋     | 23/49 [00:00<00:06,  4.05itExtracting : jsonpointer-2.1-pyhd3eb1b0_0.conda:  49%|████▉     | 24/49 [00:00<00:06,  4.05it/s]       Extracting : charset-normalizer-2.0.4-pyhd3eb1b0_0.conda:  55%|█████▌    | 27/49 [00:00<00:05,  4.05it/Extracting : libgomp-11.2.0-h1234567_1.conda:  57%|█████▋    | 28/49 [00:00<00:05,  4.05it/s]          Extracting : conda-content-trust-0.1.3-py310h06a4308_0.conda:  65%|██████▌   | 32/49 [00:01<00:00, 30.5Extracting : libgcc-ng-11.2.0-h1234567_1.conda:  67%|██████▋   | 33/49 [00:01<00:00, 30.54it/s]        Extracting : conda-package-handling-2.0.2-py310h06a4308_0.conda:  78%|███████▊  | 38/49 [00:01<00:00, 3Extracting : tk-8.6.12-h1ccaba5_0.conda:  80%|███████▉  | 39/49 [00:01<00:00, 30.54it/s]                                                                                                                      
+Installing base environment...
+
+
+Downloading and Extracting Packages
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: ...working... done
+Executing transaction: ...working... done
+installation finished.
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 23.3.1
+  latest version: 23.5.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=23.5.0
+
+
+
+## Package Plan ##
+
+  environment location: /program/com_rescale_app_helloworld_flask/2023.07.04-dev/miniconda/envs/RESCALE
+
+  added / updated specs:
+    - python=3.9
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2023.05.30 |       h06a4308_0         120 KB
+    libffi-3.4.4               |       h6a678d5_0         142 KB
+    openssl-3.0.9              |       h7f8727e_0         5.2 MB
+    pip-23.1.2                 |   py39h06a4308_0         2.5 MB
+    python-3.9.16              |       h955ad1f_3        25.1 MB
+    setuptools-67.8.0          |   py39h06a4308_0         1.0 MB
+    sqlite-3.41.2              |       h5eee18b_0         1.2 MB
+    wheel-0.38.4               |   py39h06a4308_0          64 KB
+    xz-5.4.2                   |       h5eee18b_0         642 KB
+    ------------------------------------------------------------
+                                           Total:        36.0 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main 
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu 
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2023.05.30-h06a4308_0 
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.38-h1181459_1 
+  libffi             pkgs/main/linux-64::libffi-3.4.4-h6a678d5_0 
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1 
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1 
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1 
+  ncurses            pkgs/main/linux-64::ncurses-6.4-h6a678d5_0 
+  openssl            pkgs/main/linux-64::openssl-3.0.9-h7f8727e_0 
+  pip                pkgs/main/linux-64::pip-23.1.2-py39h06a4308_0 
+  python             pkgs/main/linux-64::python-3.9.16-h955ad1f_3 
+  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0 
+  setuptools         pkgs/main/linux-64::setuptools-67.8.0-py39h06a4308_0 
+  sqlite             pkgs/main/linux-64::sqlite-3.41.2-h5eee18b_0 
+  tk                 pkgs/main/linux-64::tk-8.6.12-h1ccaba5_0 
+  tzdata             pkgs/main/noarch::tzdata-2023c-h04d1e81_0 
+  wheel              pkgs/main/linux-64::wheel-0.38.4-py39h06a4308_0 
+  xz                 pkgs/main/linux-64::xz-5.4.2-h5eee18b_0 
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_0 
+
+
+
+Downloading and Extracting Packages
+                                                     
+Preparing transaction: ...working... done            
+Verifying transaction: ...working... done            
+Executing transaction: ...working... done            
+#                                                    
+# To activate this environment, use                  
+#                                                    
+#     $ conda activate RESCALE                       
+#                                                    
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Requirement already satisfied: pip in /program/com_rescale_app_helloworld_flask/2023.07.04-dev/miniconda/envs/RESCALE/lib/python3.9/site-packages (23.1.2)
+Collecting flask (from -r requirements.txt (line 1))
+  Downloading Flask-2.3.2-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.9/96.9 kB 5.7 MB/s eta 0:00:00
+Collecting gunicorn (from -r requirements.txt (line 2))
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 17.5 MB/s eta 0:00:00
+Collecting Werkzeug>=2.3.3 (from flask->-r requirements.txt (line 1))
+  Downloading Werkzeug-2.3.6-py3-none-any.whl (242 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.5/242.5 kB 39.1 MB/s eta 0:00:00
+Collecting Jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 24.5 MB/s eta 0:00:00
+Collecting itsdangerous>=2.1.2 (from flask->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 19.6 MB/s eta 0:00:00
+Collecting blinker>=1.6.2 (from flask->-r requirements.txt (line 1))
+  Downloading blinker-1.6.2-py3-none-any.whl (13 kB)
+Collecting importlib-metadata>=3.6.0 (from flask->-r requirements.txt (line 1))
+  Downloading importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: setuptools>=3.0 in ./miniconda/envs/RESCALE/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 2)) (67.8.0)
+Collecting zipp>=0.5 (from importlib-metadata>=3.6.0->flask->-r requirements.txt (line 1))
+  Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->flask->-r requirements.txt (line 1))
+  Downloading MarkupSafe-2.1.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Installing collected packages: zipp, MarkupSafe, itsdangerous, gunicorn, click, blinker, Werkzeug, Jinja2, importlib-metadata, flask
+Successfully installed Jinja2-3.1.2 MarkupSafe-2.1.3 Werkzeug-2.3.6 blinker-1.6.2 click-8.1.3 flask-2.3.2 gunicorn-20.1.0 importlib-metadata-6.7.0 itsdangerous-2.1.2 zipp-3.15.0
+2023-07-04 11:07:04,123 - Authenticated as bdobrzelecki@rescale.com
+2023-07-04 11:07:05,807 - using sandbox eGHtSc
+Please enter the package name:
+2023-07-04 11:07:06,473 - Sandbox eGHtSc: created package rUkKc
+2023-07-04 11:07:06,612 - Sandbox eGHtSc: Waiting for status PACKAGE_COMPLETE
+2023-07-04 11:08:06,820 - Sandbox eGHtSc: Status - SNAPSHOT_IN_PROGRESS
+2023-07-04 11:09:07,068 - Sandbox eGHtSc: Status - SNAPSHOT_IN_PROGRESS
+2023-07-04 11:10:07,269 - Sandbox eGHtSc: Status - SNAPSHOT_IN_PROGRESS
+2023-07-04 11:11:07,694 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:12:08,041 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:13:08,444 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:14:10,140 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:15:10,546 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:16:10,997 - Sandbox eGHtSc: Status - SNAPSHOT_CREATED
+2023-07-04 11:17:11,383 - Sandbox eGHtSc: Status - PACKAGE_COMPLETE
+2023-07-04 11:17:19,181 - Sandbox eGHtSc: Published software version jVDsa | id: jVDsa
+2023-07-04 11:17:19,551 - Sandbox eGHtSc: Waiting for status SANDBOX_TERMINATED
+2023-07-04 11:18:19,896 - Sandbox eGHtSc: Status - TERMINATING_SANDBOX
+2023-07-04 11:19:20,299 - Sandbox eGHtSc: Status - SANDBOX_TERMINATED
+2023-07-04 11:19:20,299 - Publishing complete.

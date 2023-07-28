@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from flask import Blueprint, Flask, jsonify, render_template, url_for, request
+from flask import Blueprint, Flask, jsonify, render_template, request
 
 RESCALE_CLUSTER_ID = os.getenv("RESCALE_CLUSTER_ID")
 PREFIX = (
@@ -26,14 +26,20 @@ def get_headers(req, cutoff=200):
     return {
         k: str(v) if len(str(v)) <= cutoff else str(v)[:cutoff] + "..."
         for k, v in dict(
-            filter(lambda p: True if "w" not in p[0] and len(str(p[1])) > 0 else False, req.environ.items())
+            filter(
+                lambda p: True if "w" not in p[0] and len(str(p[1])) > 0 else False,
+                req.environ.items(),
+            )
         ).items()
     }
 
 
 def get_top(count):
+    # TODO: for windows
+    # tasklist /fo csv /nh
+    # "WmiPrvSE.exe","5320","Services","0","10,188 K"
     return subprocess.run(
-        f"ps auxc | grep -v '%CPU' | sort -r -nk 3 | awk '{{print $3,\"\t\",$11}}' | head -{count}",
+        f"ps auxc | grep -v '%MEM' | sort -r -nk 4 | awk '{{print $4,\"\t\",$11}}' | head -{count}",
         shell=True,
         stdout=subprocess.PIPE,
     ).stdout.decode()
@@ -70,7 +76,7 @@ def api_top():
     for l in top.split("\n"):
         if len(l.strip()) > 0:
             cpu, proc = l.split("\t")
-            lines.append({"cpu": float(cpu), "proc": proc.strip()})
+            lines.append({"mem": float(cpu), "proc": proc.strip()})
 
     return jsonify(top=lines)
 
@@ -83,7 +89,7 @@ def hello():
 @rescale_bp.route("/.rescale-app")
 def metadata():
     return {
-        "name": "Rescale App : Hello Worls",
+        "name": "Rescale App : Hello World",
         "description": "A simple example of a Rescale App",
         "helpUrl": "https://github.com/rescale-labs/App_HelloWorld_Flask",
         "icon": f"{PREFIX}{rescale_bp.static_url_path}/rescale_logo.svg",
@@ -104,6 +110,11 @@ def catch_all(path):
 @app.route("/hello")
 def hello():
     return "Hello World!"
+
+
+@app.route("/hello/<name>")
+def hello_name(name):
+    return f"Hello {name}!"
 
 
 app.register_blueprint(rescale_bp)

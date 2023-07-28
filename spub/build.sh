@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ANALYSIS_CODE="app_helloworld_flask"
-MOUNT_POINT="/program/app_helloworld_flask"
-VERSION="2023.07.03-dev"
+ANALYSIS_CODE="com_rescale_app_helloworld_flask"
+MOUNT_POINT="/program/$ANALYSIS_CODE"
+VERSION="2023.07.06-dev"
 
 # Using templates makes it easier to publish new versions without touching multiple files.
 instantiate_template() {
@@ -24,7 +24,7 @@ cp spub_launch.sh dist/
 zip -r dist.zip dist/
 rm -fr dist/
 
-# Create sandbox - files are uploaded. Capture Sandbox ID.
+# Create Sandbox - files are uploaded. Capture Sandbox ID.
 printf "0\n" | rescale-cli spub tile create -s settings.json |
 while read -r line
 do
@@ -36,7 +36,7 @@ do
     fi
 done
 
-# Capture ssh command for the Sandbox.
+# Capture SSH command for the Sandbox.
 rescale-cli spub sandbox connect --sandbox-id $sandbox_id |
 while read -r line
 do
@@ -50,6 +50,9 @@ done
 # Launch the build script on the Sandbox, via SSH.
 ssh_cmd=`echo "$ssh_command" | sed 's/ssh/ssh -o \"StrictHostKeyChecking=no\"/g'`" \"cd work && . ./spub_build.sh\""
 eval $ssh_cmd
+
+# Sleep for a minute (seems to help in solving the zero-size files issue)
+sleep 60
 
 # Publish tile.
 printf "$ANALYSIS_CODE\n" | rescale-cli spub tile publish --sandbox-id $sandbox_id --visibility organization-private

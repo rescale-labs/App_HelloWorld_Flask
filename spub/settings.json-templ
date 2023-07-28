@@ -18,7 +18,7 @@
         "mountPoint": "%MOUNT_POINT%"
     },
     "package": {
-        "name": null
+        "name": "%ANALYSIS_CODE%"
     },
     "software": {
         "code": "%ANALYSIS_CODE%",

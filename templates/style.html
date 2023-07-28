@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Rescale App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100;300&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100;300&display=swap">
     <link rel="stylesheet" href="{{ static_path }}/style.css">
-    <link rel="icon" type="image/x-icon" href="{{ static_path }}/rescale_logo.svg">
+    <link rel="icon" type="image/x-icon" href="{{ static_path }}/images/rescale_logo.svg">
 </head>
 
 <body>
@@ -32,8 +30,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="column rescalebg"
-            style="background-image: url('{{ static_path }}/rescale_logo.svg');">
+        <div class="column rescalebg" 
+             style="background-image: url('{{ static_path }}/images/rescale_logo.svg');">
             <h1>top_20</h1>
             <pre>{{ top_20 | safe }}</pre>
         </div>

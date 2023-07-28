@@ -8,7 +8,6 @@ body {
 }
 
 pre {
-    font-family: 'Roboto Mono', monospace;
     font-size: 12pt;
 }
 
@@ -16,7 +15,6 @@ pre {
     display: flex;
 }
 
-/* Create two equal columns that sits next to each other */
 .column {
     flex: 50%;
     margin: 10px;
