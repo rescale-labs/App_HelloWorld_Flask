@@ -125,7 +125,7 @@ gunicorn -t 0 --certfile $HOME/.certs/nb.pem --keyfile $HOME/.certs/nb.key \
 
 The port is fixed, as are the certificate and key files. The web application needs to be aware that all HTTP requests will be prefixed with `/notebooks/{cluster_id}` and need to be routed accordingly. See the following sections to find out how requests are being routed within a web application.
 
-### Proposed integration with the Rescale ports
+### Proposed integration with the Rescale Portal
 
 Rescale Apps are currently in a preview mode using the `jupyter4all` hack. We're trying to gather feedback on whether this method of extending the capabilities of HPC clusters is something desired by the community. We have ideas on how to integrate Rescale Apps with the Portal. We'd love to hear your ideas.
 
