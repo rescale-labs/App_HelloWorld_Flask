@@ -316,7 +316,7 @@ RESCALE_CLUSTER_ID = os.getenv("RESCALE_CLUSTER_ID")
 PREFIX = (
     "/local/"
     if RESCALE_CLUSTER_ID == None
-    else f"/notebooks/{os.getenv('RESCALE_CLUSTER_ID')}/"
+    else f"/notebooks/{RESCALE_CLUSTER_ID}/"
 )
 
 rescale_bp = Blueprint(
