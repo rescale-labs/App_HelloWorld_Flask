@@ -31,11 +31,11 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 
-We can now point our server to http://127.0.0.1:5000/hello, and you should see a hello world page.
+We can now point our browser to http://127.0.0.1:5000/hello, and we should see the hello world page.
 
 ![](README.images/helloworld_page.png)
 
-Now we are ready to play around with the code and make changes, but first let's deploy our Rescale App to the Rescale Software Catalog.
+We are ready to play around with the code and make changes, but first let's deploy our Rescale App to the Rescale Platform.
 
 ### Deploying a Rescale App as Job input
 
