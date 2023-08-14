@@ -299,7 +299,7 @@ Hello Adam Smith!
 # Special characters need to be URL encoded to work as expected
 ```
 
-In the case of Rescale Apps, the Rescale platform acts as a [reverse proxy—all requests made against a public web address are passed though to the cluster serving the web app (hiding the web server identity). The request path needs to include a unique identifier that allows the proxy to decide which Rescale cluster should receive the request.
+In the case of Rescale Apps, the Rescale platform acts as a [reverse proxy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling#reverse_proxies) — all requests made against a public web address are passed though to the cluster serving the web app (hiding the web server identity). The request path needs to include a unique identifier that allows the proxy to decide which Rescale cluster should receive the request.
 
 Currently, the path has a form of `/notebooks/{cluster_id}/`. This means that all request paths reaching the web server running on a cluster will have a static prefix with `cluster_id`. The platform assumes that the web server will accept TLS encrypted connections on a static port `8888`.
 
@@ -615,4 +615,4 @@ Stay tuned. Examples are coming…
 
 [Rescale™](https://rescale.com) is a technology company that builds cloud software and services that enable organizations of every size to deliver engineering and scientific breakthroughs that enrich humanity.
 
-[Bartek Dobrzelecki](linkedin.com/in/bardobrze) is a Customer Success Engineer at Rescale with a background in High Performance Computing and Software Engineering. He is always keen to share his knowledge, demystify technology and democratize computational thinking. He strongly believes that no technology should be indistinguishable from magic.
+[Bartek Dobrzelecki](https://linkedin.com/in/bardobrze) is a Customer Success Engineer at Rescale with a background in High Performance Computing and Software Engineering. He is always keen to share his knowledge, demystify technology and democratize computational thinking. He strongly believes that no technology should be indistinguishable from magic.
