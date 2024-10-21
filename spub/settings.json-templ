@@ -3,7 +3,7 @@
         "cores": 2,
         "walltime": 1,
         "osFamily": "linux",
-        "distro": "centos",
+        "distro": "rescale-linux8",
         "mpi": "none",
         "project": null,
         "inputFiles": [
@@ -14,7 +14,7 @@
     },
     "install": {
         "command": "",
-        "volumeSize": 1,
+        "volumeSize": 2,
         "mountPoint": "%MOUNT_POINT%"
     },
     "package": {

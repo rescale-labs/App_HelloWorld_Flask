@@ -1,8 +1,9 @@
 #!/bin/bash
 
-ANALYSIS_CODE="com_rescale_app_helloworld_flask"
-MOUNT_POINT="/program/$ANALYSIS_CODE"
-VERSION="2023.07.06-dev"
+ANALYSIS_CODE="rescale_hwflask"
+VERSION="$(date +"%Y.%m.%d")-dev2"
+
+MOUNT_POINT="/software/${ANALYSIS_CODE}_${VERSION}"
 
 # Using templates makes it easier to publish new versions without touching multiple files.
 instantiate_template() {
